@@ -46,7 +46,7 @@ func (client *client) init(broker string, clientID string) {
 	opts.SetDefaultPublishHandler(handler)
 
 	client.c = mqtt.NewClient(opts)
-	client.ID = client.c.GetClientID()
+	client.ID = clientID
 	if token := client.c.Connect(); token.Wait() && token.Error() != nil {
 		log.Panicln("connect broker error.", token.Error())
 	}

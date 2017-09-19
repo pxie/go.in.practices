@@ -13,7 +13,7 @@ func main() {
 	subcriber.init(broker, "subClient")
 	defer subcriber.distroy()
 
-	subcriber.sub(topic, qos, handler)
+	go subcriber.sub(topic, qos, handler)
 	defer subcriber.unsub(topic)
 
 	publisher := &client{}
@@ -21,7 +21,7 @@ func main() {
 	publisher.init(broker, clientID)
 	defer publisher.distroy()
 
-	publisher.pub(topic, qos, createMsg(clientID, 0))
+	go publisher.pub(topic, qos, createMsg(clientID, 512))
 
 	time.Sleep(1 * time.Second)
 }
