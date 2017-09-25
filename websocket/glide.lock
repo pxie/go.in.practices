@@ -1,0 +1,34 @@
+hash: b34679f0347406d9edf372dc2f724e88f1d6d1df4c7d0f5581494243a151a7ef
+updated: 2017-09-25T15:42:30.952468299+08:00
+imports:
+- name: github.com/cloudfoundry-community/go-cfenv
+  version: f920e9562d5f951cbf11785728f67258c38a10d0
+- name: github.com/go-ole/go-ole
+  version: 8a4f5c214bfb4475619b8bb7ccbe6fa5c91745f4
+  subpackages:
+  - oleutil
+- name: github.com/gorilla/websocket
+  version: ea4d1f681babbce9545c9c5f3d5194a789c89f5b
+- name: github.com/mitchellh/mapstructure
+  version: d0303fe809921458f417bcf828397a65db30a7e4
+- name: github.com/satori/go.uuid
+  version: 879c5887cd475cd7864858769793b2ceb0d44feb
+- name: github.com/shirou/gopsutil
+  version: a452de7c734a0fa0f16d2e5725b0fa5934d9fbec
+  subpackages:
+  - cpu
+  - host
+  - internal/common
+  - mem
+  - net
+  - process
+- name: github.com/shirou/w32
+  version: bb4de0191aa41b5507caa14b0650cdbddcd9280b
+- name: github.com/StackExchange/wmi
+  version: ea383cf3ba6ec950874b8486cd72356d007c768f
+- name: golang.org/x/sys
+  version: 429f518978ab01db8bb6f44b66785088e7fba58b
+  subpackages:
+  - unix
+  - windows
+testImports: []

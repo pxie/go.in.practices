@@ -50,6 +50,9 @@ func listAgents(b *broker) []byte {
 		r.RemoteAddr = agent.conn.RemoteAddr().String()
 		text = append(text, *r)
 	}
+	if len(text) == 0 {
+		return []byte("no agent has been registered.")
+	}
 	res, _ := json.Marshal(text)
 	return res
 }
@@ -63,9 +66,15 @@ func getPort() string {
 	return strconv.Itoa(env.Port)
 }
 
+func home(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "welcome!\n For more details, https://github.com/pxie/go.in.practices/tree/master/websocket")
+}
+
 func main() {
 	broker := newBroker()
 	go broker.start()
+
+	http.HandleFunc("/", home)
 
 	http.HandleFunc("/agents", func(w http.ResponseWriter, r *http.Request) {
 		agentsHandler(broker, w, r)

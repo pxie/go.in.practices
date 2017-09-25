@@ -61,8 +61,16 @@ func exec(msg string, conn *websocket.Conn) {
 
 func main() {
 	// connect to websocket server
-	addr := "localhost:2222"
-	u := url.URL{Scheme: "ws", Host: addr, Path: "/register"}
+
+	// run against localhost
+	// addr := "localhost:2222"
+	// u := url.URL{Scheme: "ws", Host: addr, Path: "/register"}
+
+	// TODO: Change addr to your websocket server, which pushed to Predix platform
+	// run against websocket server on Predix
+	addr := "websocket-server-multistory-width.run.aws-jp01-pr.ice.predix.io"
+	u := url.URL{Scheme: "wss", Host: addr, Path: "/register"}
+
 	log.Printf("connecting to %s", u.String())
 	conn, _, err := websocket.DefaultDialer.Dial(u.String(), nil)
 	if err != nil {

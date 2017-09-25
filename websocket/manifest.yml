@@ -1,0 +1,10 @@
+---
+applications:
+  - name: websocket-server
+    disk_quota: 350M
+    memory: 170M
+    random-route: true
+    stack: cflinuxfs2
+    buildpack: https://github.com/cloudfoundry/go-buildpack.git
+    env:
+      GOVERSION: go1.8
