@@ -2,5 +2,8 @@ websocket
 client
 debug
 vendor/
-components.pptx
+doc/
+client/
 .gitignore
+README.md
+websocket

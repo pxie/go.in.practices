@@ -68,10 +68,10 @@ func main() {
 
 	// TODO: Change addr to your websocket server, which pushed to Predix platform
 	// run against websocket server on Predix
-	addr := "websocket-server-multistory-width.run.aws-jp01-pr.ice.predix.io"
+	addr := "websocket-server.run.aws-jp01-pr.ice.predix.io"
 	u := url.URL{Scheme: "wss", Host: addr, Path: "/register"}
 
-	log.Printf("connecting to %s", u.String())
+	log.Printf("register to %s", u.String())
 	conn, _, err := websocket.DefaultDialer.Dial(u.String(), nil)
 	if err != nil {
 		log.Fatal("connect to websocker server error.", err)
